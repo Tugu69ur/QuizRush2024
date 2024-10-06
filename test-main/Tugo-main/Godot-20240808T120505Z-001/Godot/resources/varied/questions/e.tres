@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizRush" load_steps=2 format=3 uid="uid://bdki506r80xb6"]
+
+[ext_resource type="Script" path="res://Scripts/resources/question.gd" id="1_xvq8b"]
+
+[resource]
+script = ExtResource("1_xvq8b")
+question_info = "Hun heden huruutai ve"
+type = 0
+options = Array[String](["1", "2", "3", "4", "20"])
+correct = "20"

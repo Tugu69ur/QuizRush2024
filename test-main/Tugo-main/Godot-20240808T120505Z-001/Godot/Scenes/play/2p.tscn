@@ -1,0 +1,587 @@
+[gd_scene load_steps=10 format=3 uid="uid://oxhbsbrqyjjx"]
+
+[ext_resource type="Script" path="res://Scripts/2p.gd" id="1_7oqm0"]
+[ext_resource type="Texture2D" uid="uid://w4uevn7obhnj" path="res://assets/background/Free Pixel Art Forest/Preview/Background.png" id="2_odhhx"]
+[ext_resource type="Texture2D" uid="uid://b0onh4u7brqtk" path="res://Vid/right-arrow.png" id="3_5ssol"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wiay"]
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0fyn"]
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkcfk"]
+bg_color = Color(0.838897, 0.838897, 0.838897, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wftqn"]
+bg_color = Color(0.58787, 0.607684, 0.578067, 1)
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_8nkva"]
+Button/styles/disabled = SubResource("StyleBoxFlat_6wiay")
+Button/styles/focus = SubResource("StyleBoxFlat_l0fyn")
+Button/styles/hover = SubResource("StyleBoxFlat_gkcfk")
+Button/styles/normal = SubResource("StyleBoxFlat_wftqn")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68g3k"]
+
+[node name="2p" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7oqm0")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.862745)
+position = Vector2(579, 201.75)
+scale = Vector2(1.24353, 1.12926)
+texture = ExtResource("2_odhhx")
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 40.0
+offset_right = 322.0
+offset_bottom = 263.0
+
+[node name="JoinCreateMatch" type="Button" parent="Panel3"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 71.0
+offset_right = 230.0
+offset_bottom = 106.0
+text = "Join/Create"
+
+[node name="MatchName" type="LineEdit" parent="Panel3"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 22.0
+offset_right = 243.0
+offset_bottom = 53.0
+
+[node name="Label" type="Label" parent="Panel3"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 91.0
+offset_bottom = 60.0
+text = "Name Of 
+Match"
+
+[node name="Ping" type="Button" parent="Panel3"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 75.0
+offset_right = 102.0
+offset_bottom = 106.0
+text = "Ping"
+
+[node name="Matchmaking" type="Button" parent="Panel3"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 185.0
+offset_right = 204.0
+offset_bottom = 220.0
+text = "Start Matchmaking"
+
+[node name="Button" type="Button" parent="Panel3"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 131.0
+offset_right = 198.0
+offset_bottom = 171.0
+text = "Ready"
+
+[node name="Panel4" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 343.0
+offset_right = 293.0
+offset_bottom = 507.0
+
+[node name="BlockFriends" type="Button" parent="Panel4"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 126.0
+offset_right = 102.0
+offset_bottom = 157.0
+text = "Block Friend"
+
+[node name="GetFriends" type="Button" parent="Panel4"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 84.0
+offset_right = 104.0
+offset_bottom = 115.0
+text = "Get Friends"
+
+[node name="AddFriendText" type="LineEdit" parent="Panel4"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 32.0
+offset_right = 201.0
+offset_bottom = 63.0
+placeholder_text = "Name of friend"
+
+[node name="AddFriend" type="Button" parent="Panel4"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 84.0
+offset_right = 207.0
+offset_bottom = 115.0
+text = "Add friend"
+
+[node name="RemoveFriend" type="Button" parent="Panel4/AddFriend"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 41.0
+offset_right = 105.0
+offset_bottom = 72.0
+text = "Delete friend"
+
+[node name="Panel4" type="Panel" parent="Panel4"]
+layout_mode = 0
+offset_left = 241.0
+offset_top = -4.0
+offset_right = 465.0
+offset_bottom = 240.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel4/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel4/Panel4"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center][b]Friends"
+
+[node name="Panel5" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 639.0
+offset_top = 64.0
+offset_right = 863.0
+offset_bottom = 228.0
+
+[node name="CloseGroup" type="Button" parent="Panel5"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 126.0
+offset_right = 102.0
+offset_bottom = 157.0
+text = "Close Group"
+
+[node name="GetGroupMemebers" type="Button" parent="Panel5"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 84.0
+offset_right = 104.0
+offset_bottom = 115.0
+text = "Get Group"
+
+[node name="GroupName" type="LineEdit" parent="Panel5"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 32.0
+offset_right = 201.0
+offset_bottom = 63.0
+placeholder_text = "Name of group"
+
+[node name="CreateGroup" type="Button" parent="Panel5"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 84.0
+offset_right = 207.0
+offset_bottom = 115.0
+text = "Create Group"
+
+[node name="DeleteGroup" type="Button" parent="Panel5/CreateGroup"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 41.0
+offset_right = 105.0
+offset_bottom = 72.0
+text = "Delete Group"
+
+[node name="Panel4" type="Panel" parent="Panel5"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 8.0
+offset_right = 450.0
+offset_bottom = 252.0
+
+[node name="GroupVBox" type="VBoxContainer" parent="Panel5/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel5/Panel4"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center][b]Group Members"
+
+[node name="Panel6" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1161.0
+offset_top = -8.0
+offset_right = 1560.0
+offset_bottom = 400.0
+
+[node name="Label" type="Label" parent="Panel6"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 26.0
+offset_right = 61.0
+offset_bottom = 49.0
+text = "Name"
+
+[node name="Label2" type="Label" parent="Panel6"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 66.0
+offset_right = 105.0
+offset_bottom = 89.0
+text = "Description"
+
+[node name="GroupName" type="LineEdit" parent="Panel6"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 26.0
+offset_right = 298.0
+offset_bottom = 57.0
+
+[node name="GroupDesc" type="LineEdit" parent="Panel6"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 63.0
+offset_right = 298.0
+offset_bottom = 94.0
+
+[node name="GroupQuery" type="LineEdit" parent="Panel6"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 212.0
+offset_right = 298.0
+offset_bottom = 243.0
+placeholder_text = "Group Query"
+
+[node name="CreateGroup" type="Button" parent="Panel6"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 107.0
+offset_right = 265.0
+offset_bottom = 138.0
+text = "Create Group"
+
+[node name="AddUserToGroup" type="Button" parent="Panel6"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 107.0
+offset_right = 140.0
+offset_bottom = 138.0
+text = "Join Group"
+
+[node name="AddUserToGroup2" type="Button" parent="Panel6"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 147.0
+offset_right = 142.0
+offset_bottom = 201.0
+text = "Add User 
+To Group"
+
+[node name="List Groups" type="Button" parent="Panel6"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 208.0
+offset_right = 142.0
+offset_bottom = 262.0
+text = "List Groups"
+
+[node name="CheckButton" type="CheckButton" parent="Panel6"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 164.0
+offset_right = 263.0
+offset_bottom = 195.0
+text = "Open"
+
+[node name="Panel" type="Panel" parent="Panel6"]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 4.0
+offset_right = 656.0
+offset_bottom = 273.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel6/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UserToManage" type="LineEdit" parent="Panel6"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 277.0
+offset_right = 276.0
+offset_bottom = 308.0
+placeholder_text = "User To Manage"
+
+[node name="PromoteUser" type="Button" parent="Panel6"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 319.0
+offset_right = 129.0
+offset_bottom = 355.0
+text = "Promote"
+
+[node name="KickUser" type="Button" parent="Panel6"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 320.0
+offset_right = 248.0
+offset_bottom = 356.0
+text = "Kick"
+
+[node name="DemoteUser" type="Button" parent="Panel6"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 364.0
+offset_right = 127.0
+offset_bottom = 400.0
+text = "Demote"
+
+[node name="BanUser" type="Button" parent="Panel6"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 364.0
+offset_right = 251.0
+offset_bottom = 400.0
+text = "Ban"
+
+[node name="LeaveGroup" type="Button" parent="Panel6"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 106.0
+offset_right = 391.0
+offset_bottom = 142.0
+text = "Leave Group"
+
+[node name="DeleteGroup" type="Button" parent="Panel6"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 158.0
+offset_right = 384.0
+offset_bottom = 194.0
+text = "Leave Group"
+
+[node name="Panel7" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 333.0
+offset_right = 792.0
+offset_bottom = 591.0
+
+[node name="JoinGroupChatRoom" type="Button" parent="Panel7"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 109.0
+offset_right = 189.0
+offset_bottom = 153.0
+text = "Join Group Chat"
+
+[node name="JoinChatRoom" type="Button" parent="Panel7"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 57.0
+offset_right = 173.0
+offset_bottom = 101.0
+text = "Join Chat"
+
+[node name="ChatName" type="LineEdit" parent="Panel7"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 13.0
+offset_right = 199.0
+offset_bottom = 44.0
+placeholder_text = "Chat Name"
+
+[node name="Chat" type="Panel" parent="Panel7"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 3.0
+offset_right = 536.0
+offset_bottom = 255.0
+
+[node name="ChatText" type="LineEdit" parent="Panel7/Chat"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = -82.0
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = "Chat Text Here"
+
+[node name="SubmitChat" type="Button" parent="Panel7/Chat"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -33.0
+grow_horizontal = 0
+grow_vertical = 0
+text = ">"
+
+[node name="TabContainer" type="TabContainer" parent="Panel7/Chat"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="username" type="TextEdit" parent="Panel7/Chat/TabContainer"]
+layout_mode = 2
+editable = false
+wrap_mode = 1
+metadata/_tab_index = 0
+
+[node name="JoinDirectChat" type="Button" parent="Panel7"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 161.0
+offset_right = 187.0
+offset_bottom = 205.0
+text = "Join Direct Chat"
+
+[node name="Panel8" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 742.0
+offset_right = 916.0
+offset_bottom = 80.0
+
+[node name="CreateParty" type="Button" parent="Panel8"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 125.0
+offset_bottom = 51.0
+text = "Create Party"
+
+[node name="Panel" type="Panel" parent="Panel8"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = -2.0
+offset_right = 396.0
+offset_bottom = 148.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel8/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = -13.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="Panel8"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 87.0
+offset_right = 174.0
+offset_bottom = 193.0
+
+[node name="Label" type="Label" parent="Panel8/Panel2"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 24.0
+offset_right = 141.0
+offset_bottom = 47.0
+text = "Join Party?"
+
+[node name="JoinPartyNo" type="Button" parent="Panel8/Panel2"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 72.0
+offset_right = 78.0
+offset_bottom = 103.0
+text = "No"
+
+[node name="JoinPartyYes" type="Button" parent="Panel8/Panel2"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 73.0
+offset_right = 170.0
+offset_bottom = 104.0
+text = "Yes"
+
+[node name="back" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 91.0
+offset_top = 623.0
+offset_right = 165.0
+offset_bottom = 681.0
+rotation = 3.14159
+theme = SubResource("Theme_8nkva")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_68g3k")
+icon = ExtResource("3_5ssol")
+icon_alignment = 1
+
+[connection signal="pressed" from="Panel3/JoinCreateMatch" to="." method="_on_join_create_match_pressed"]
+[connection signal="pressed" from="Panel3/Matchmaking" to="." method="_on_matchmaking_pressed"]
+[connection signal="pressed" from="Panel3/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

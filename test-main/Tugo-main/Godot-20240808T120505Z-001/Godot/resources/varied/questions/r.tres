@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuizRush" load_steps=3 format=3 uid="uid://bnfo4ybc1qajk"]
+
+[ext_resource type="Script" path="res://Scripts/resources/question.gd" id="1_15tyj"]
+[ext_resource type="Texture2D" uid="uid://cn6rkwmrlsnc6" path="res://Vid/download-_2_.jpg" id="1_nlik3"]
+
+[resource]
+script = ExtResource("1_15tyj")
+question_info = "Who?"
+type = 1
+qImage = ExtResource("1_nlik3")
+options = Array[String](["Dravis", "Bravis", "Lravis", "Kravis", "Travis"])
+correct = "Travis"

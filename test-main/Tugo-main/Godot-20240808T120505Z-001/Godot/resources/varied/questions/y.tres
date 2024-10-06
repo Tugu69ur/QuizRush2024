@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizRush" load_steps=2 format=3 uid="uid://dyu5her08ys1t"]
+
+[ext_resource type="Script" path="res://Scripts/resources/question.gd" id="1_qij7m"]
+
+[resource]
+script = ExtResource("1_qij7m")
+question_info = ""
+type = 0
+options = Array[String]([])
+correct = ""

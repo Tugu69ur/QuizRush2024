@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuizRush" load_steps=2 format=3 uid="uid://cwe5km48jyduq"]
+
+[ext_resource type="Script" path="res://Scripts/resources/question.gd" id="1_aomm1"]
+
+[resource]
+script = ExtResource("1_aomm1")
+question_info = "Tenger ymar ungte ve"
+type = 0
+options = Array[String](["Ulaan", "Shar", "Nogoon", "Tsenher", "Ygaan"])
+correct = "Tsenher"

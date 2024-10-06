@@ -1,0 +1,156 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5yfb4336mem1"]
+
+[ext_resource type="Script" path="res://Scripts/controllers/game_controller.gd" id="1_mplp1"]
+[ext_resource type="Resource" uid="uid://ts3bdqnx5tbf" path="res://resources/varied/theme/theme_varied.tres" id="2_cv4bq"]
+[ext_resource type="AudioStream" uid="uid://cu1bp5rssrjqm" path="res://audio/correct-156911.mp3" id="3_05w6i"]
+[ext_resource type="Shader" path="res://UI/main1.gdshader" id="3_flyud"]
+[ext_resource type="AudioStream" uid="uid://npfblnppx8j7" path="res://audio/wrong-answer-21-199825.mp3" id="4_7upkp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0h4p7"]
+shader = ExtResource("3_flyud")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_5g5vv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hlgd7"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mexwq"]
+_data = {
+"RESET": SubResource("Animation_5g5vv"),
+"blur": SubResource("Animation_hlgd7")
+}
+
+[node name="Main1" type="CanvasLayer"]
+script = ExtResource("1_mplp1")
+quiz = ExtResource("2_cv4bq")
+color_right = Color(0, 0.983707, 0.548639, 1)
+color_wrong = Color(0.999509, 0, 0.0520491, 1)
+
+[node name="Control" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_0h4p7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="qInfo" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(500, 320)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestionText" type="Label" parent="Control/qInfo"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "as"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="imageHolder" type="Panel" parent="Control/qInfo"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+
+[node name="questionImage" type="TextureRect" parent="Control/qInfo/imageHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 617.0
+offset_right = -620.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="qHolder" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+offset_top = 335.0
+offset_right = 1157.0
+offset_bottom = 635.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Option1" type="Button" parent="Control/qHolder"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+
+[node name="Option2" type="Button" parent="Control/qHolder"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+
+[node name="Option3" type="Button" parent="Control/qHolder"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+
+[node name="Option4" type="Button" parent="Control/qHolder"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+
+[node name="Option5" type="Button" parent="Control/qHolder"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+
+[node name="Correct" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_05w6i")
+
+[node name="Incorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_7upkp")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Control")
+libraries = {
+"": SubResource("AnimationLibrary_mexwq")
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
